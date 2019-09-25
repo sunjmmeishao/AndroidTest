@@ -7,11 +7,17 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.*;
+import androidx.constraintlayout.*;
 
 import android.view.*;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.*;
+//import  com.suke.widget.* ;
+import com.loopj.android.http.*;
+import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.HttpEntity;
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -31,8 +37,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView textView1=findViewById(R.id.text);
-        textView1.setText("ffssssssfsfsfsfsf");
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get("https://www.baidu.com", new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onStart() {
+                // called before request is started
+            }
+
+         //   @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] response) {
+                // called when response HTTP status is "200 OK"
+                statusCode=0;
+            }
+
+           // @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
+
+                // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+            }
+
+            @Override
+            public void onRetry(int retryNo) {
+                // called when request is retried
+            }
+        });
+
+
     }
 
     @Override
