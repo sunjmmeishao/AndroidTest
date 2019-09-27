@@ -5,7 +5,6 @@ def VERSION_NAME = "0.0.3"
 
 android {
     compileSdkVersion 29
-    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 20
@@ -17,10 +16,6 @@ android {
     lintOptions {
         abortOnError false
     }
-    compileOptions {
-        sourceCompatibility = 1.6
-        targetCompatibility = 1.6
-    }
 }
 
-//pply from: '../gradle-mvn-push.gradle'
+//apply from: '../gradle-mvn-push.gradle'
